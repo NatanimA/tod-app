@@ -1,35 +1,28 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
+// eslint-disable-next-line
 import DisplayTodo from './components/DisplayTodo';
+// eslint-disable-next-line
 import AddToDO from './components/AddToDo';
 
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {todo:[
-      { content: 'Do Loundary', complete: false, id: 0 },
-    ]};
+    this.state = { todo: [] };
   }
-  
-  componentDidMount(){
-    console.log("hello,I am MOunting")
-    localStorage.setItem('todos', JSON.stringify(this.state.todo))
-  }
-  
 
   onHandleAddToDO = (content) => {
-    const todoObj = {content:null,complete:false,id:null}
-    const todo = [...this.state.todo];
-    todoObj.content = content
-    todo.push(todoObj)
-    todo.forEach((item,index) =>{
-      item.id=index
-    })
+    const todoObj = { content: null, complete: false, id: null };
+    const todo = JSON.parse(localStorage.getItem('todos'));
+    todoObj.content = content;
+    todo.push(todoObj);
+    todo.forEach((item, index) => {
+      item.id = index;
+    });
     this.setState({
-      todo:todo
-    })
+      todo,
+    });
 
-    localStorage.setItem('todos', JSON.stringify(todo))
-
+    localStorage.setItem('todos', JSON.stringify(todo));
   }
 
   render() {
