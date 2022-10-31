@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,800;1,100;1,400;1,900&display=swap');
+
 body {
   display: flex;
   flex-direction: row;
   height: 100vh;
   width: 100%;
   justify-content: center;
-  margin:20px;
+  margin: 20px;
   font-family: 'Poppins', sans-serif;
 }
 
 .App {
   display: flex;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 54px 55px, rgba(0, 0, 0, 0.12) 0 -12px 30px, rgba(0, 0, 0, 0.12) 0 4px 6px, rgba(0, 0, 0, 0.17) 0 12px 13px, rgba(0, 0, 0, 0.09) 0 -3px 5px;
   flex-direction: column;
   width: 400px;
   position: relative;
@@ -23,7 +24,7 @@ body {
   margin-bottom: 2rem;
 }
 
-input[type = 'text'] {
+input[type='text'] {
   position: absolute;
   top: 0;
   left: 0;
@@ -48,6 +49,7 @@ input[type="text"]:focus {
   grid-template-columns: 1fr 2fr;
   position: relative;
 }
+
 .content-paragraph {
   font-weight: 300;
   grid-column-start: 2;
@@ -76,7 +78,6 @@ button {
 }
 
 button:hover {
-  background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
   background-size: 400%;
 }
-
