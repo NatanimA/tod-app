@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import DisplayTodo from './components/DisplayTodo';
+import AddToDO from './components/AddToDo';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {todo:[
+      { content: 'Do Loundary', complete: false, id: 0 },
+    ]};
+  }
+  
+  componentDidMount(){
+    console.log("hello,I am MOunting")
+    localStorage.setItem('todos', JSON.stringify(this.state.todo))
+  }
+  
+
+  onHandleAddToDO = (content) => {
+    const todoObj = {content:null,complete:false,id:null}
+    const todo = [...this.state.todo];
+    todoObj.content = content
+    todo.push(todoObj)
+    todo.forEach((item,index) =>{
+      item.id=index
+    })
+    this.setState({
+      todo:todo
+    })
+
+    localStorage.setItem('todos', JSON.stringify(todo))
+
+  }
+
+  render() {
+    return (
+      <div className="App" >
+        <AddToDO onHandleAddToDO={this.onHandleAddToDO} />
+        <DisplayTodo />
+        <button>Clear All Selected</button>
+      </div>
+    );
+  }
 }
-
-export default App;
