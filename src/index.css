@@ -37,7 +37,6 @@ input[type="text"]:focus {
 }
 
 .content-container {
-  position: relative;
   margin-left: 1rem;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
