@@ -6,16 +6,9 @@ body {
   height: 100vh;
   width: 100%;
   justify-content: center;
+  align-items: center;
   margin: 20px;
   font-family: 'Poppins', sans-serif;
-}
-
-.App {
-  display: flex;
-  box-shadow: rgba(0, 0, 0, 0.25) 0 54px 55px, rgba(0, 0, 0, 0.12) 0 -12px 30px, rgba(0, 0, 0, 0.12) 0 4px 6px, rgba(0, 0, 0, 0.17) 0 12px 13px, rgba(0, 0, 0, 0.09) 0 -3px 5px;
-  flex-direction: column;
-  width: 400px;
-  position: relative;
 }
 
 .input-form {
@@ -44,16 +37,17 @@ input[type="text"]:focus {
 }
 
 .content-container {
+  position: relative;
   margin-left: 1rem;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 2fr 1fr;
   position: relative;
 }
 
 .content-paragraph {
   font-weight: 300;
   grid-column-start: 2;
-  grid-column-end: 4;
+  grid-column-end: 3;
 }
 
 input[type='checkbox'] {
@@ -62,22 +56,32 @@ input[type='checkbox'] {
   margin-top: 15px;
 }
 
-button {
-  position: relative;
-  height: 60px;
-  border: none;
-  outline: none;
-  background: #9ecaed;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background 0.5s;
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 15%;
+  background: green;
+  opacity: 0.7;
 }
 
-button:hover {
-  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
-  background-size: 400%;
+.app-container {
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 54px 55px, rgba(0, 0, 0, 0.12) 0 -12px 30px, rgba(0, 0, 0, 0.12) 0 4px 6px, rgba(0, 0, 0, 0.17) 0 12px 13px, rgba(0, 0, 0, 0.09) 0 -3px 5px;
+  flex-direction: column;
+  width: 400px;
+  position: relative;
+}
+
+.todos-header {
+  text-align: center;
+  font-size: 3rem;
+  color: #9ecaed;
+}
+
+.trash-icons {
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
